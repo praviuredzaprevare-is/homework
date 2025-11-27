@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<title>Welcome to Osijek</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: url('https://cdn.pixabay.com/photo/2018/11/12/17/46/croatia-3811357_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, 0.55);
+    min-height: 100vh;
+    padding-bottom: 100px;
+  }
+  header {
+    text-align: center;
+    padding: 60px 20px 20px;
+    color: white;
+  }
+  header h1 { font-size: 48px; font-weight: 600; margin-bottom: 10px; }
+  header p { font-size: 20px; opacity: 0.9; }
+  .intro {
+    background: rgba(255,255,255,0.92);
+    width: 85%; max-width: 900px;
+    margin: 0 auto 10px;
+    padding: 20px 25px;
+    border-radius: 15px;
+    text-align: center; font-size: 18px; color: #333;
+    box-shadow: 0 0 18px rgba(0,0,0,0.18);
+  }
+  .section {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 15px auto; padding: 25px; width: 85%; max-width: 1000px;
+    border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    display: none; cursor: pointer; position: relative;
+  }
+  .section.visible { display:block; opacity:1; transform: translateY(0); }
+  .section h2 { font-size: 28px; margin-top:0; }
+  .section p { font-size:17px; line-height:1.6; color:#444; }
+  .section img { width:100%; border-radius:12px; margin-top:15px; transition: transform 0.4s ease; cursor:pointer; }
+  .section img:hover { transform: scale(1.02); }
+
+  /* EXTRA CONTENT (accordion) */
+  .extra { overflow:hidden; max-height:0; opacity:0; transition: all 0.7s ease; margin-top:10px; }
+  .extra.open { max-height:800px; opacity:1; }
+  .extra img { width:100%; border-radius:10px; margin-top:12px; }
+
+  /* MODAL / LIGHTBOX */
+  .modal {
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.8); display:none; justify-content:center; align-items:center; z-index:9999;
+  }
+  .modal-content {
+    position: relative; background:#fff; padding:20px; border-radius:15px; max-width:900px; width:90%;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:15px;
+  }
+  .modal-content img { width:100%; border-radius:12px; }
+  .close-btn {
+    position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; color:#333; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="overlay">
+  <header>
+    <h1>Welcome to Osijek</h1>
+    <p>Discover the beauty of the city on the Drava river</p>
+  </header>
+
+  <div class="intro">
+    Osijek is a city located in eastern Croatia, he is laying on river Drava. It's known for its history and beautiful places. In Osijek you can enjoy in long walks along the Drava promenade.
+  </div>
+
+  <!-- Sekcije -->
+  <div class="section">
+    <h2>Zoo and Kompa</h2>
+    <p>You can cross the river with the bridge, which is in the middle of the promanade. Besides the bridge, 
+	you can also cross the Drava river by small ship called Kompa. You can drive with the Kompa only during the summer days and it is for free. 
+	When you croos the river you can find the Zoo Hotel and the zoo. In the zoo you can view a lots of animals and after that you can rest in the caffe bar. 
+	Caffe bar is owned by the Zoo hotel which is by the river. </p>
+    <img src="https://www.zoo-osijek.hr/upload/images/mapa_ZOO_vrta_Osijek2.jpg" data-images="http://cdn-vps.osijek031.com/slike/novosti_2018_08/2018_08_28_zoo_vrt_osijek_490.jpg,https://www.zoo-osijek.hr/images/1/najveci.jpg,https://www.nacional.hr/wp-content/uploads/2023/04/osijekZOO1.jpg,https://cf.bstatic.com/xdata/images/hotel/max1024x768/74130570.jpg?k=c7ae16194d9555afdd46c3a06c4afeb6f8bb03586a07421eb7fa8319feaaf216&o=">
+    <img src="https://lokalni.vecernji.hr/media/daguerre/2018/08/24/0b96191db44d8f02c1c9.jpeg" data-images="https://image.dnevnik.hr/media/images/1920x1080/Apr2023/62535643-kompa.jpg,https://cdn-vps.osijek031.com/slike/novosti_2012_04/2012_04_11_kompa_1_490.jpg,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq4ga91RxumauztQ6m7CcV3Zb9814nOAG2uA&s,https://visitslavoniabaranja.com/wp-content/uploads/2025/08/ZooVrtOs-skela-Kompa-1024x614.jpg">
+  </div>
+
+  <div class="section">
+    <h2>Bikes and scooters</h2>
+    <p>If you like riding a bike or a electric scooter you can rent it on many places in Osijek. Osijek is long city and it's covered with many bicycle roads.</p>
+    <img src="https://i1240.photobucket.com/albums/gg494/lampas8/nono/karta-biciklisticke-staze-rute-osijek.png" data-images="http://cdn-vps.osijek031.com/slike/novosti_2009_06/2009_06_09_bistra1_400.jpg,https://cdn-sib.net.hr/wp-content/uploads/a71e62afb3d038091750dc539f187385-view_article_new.jpg,https://cdn-sib.net.hr/wp-content/uploads/d353d81d8c3249650fea3f1991ae6c88.jpg,https://www.vecernji.hr/media/img/fc/d0/7f871ef02f52c746a527.jpeg">
+    <img src="https://www.osijek.hr/wp-content/uploads/2021/12/IMG_6174.jpg" data-images="https://www.osijek.hr/wp-content/uploads/2021/04/MRM_7456.jpg,https://www.osijekexpress.com/wp-content/uploads/2022/05/biciklom-eu-projekti-obz-8.jpg,https://i0.wp.com/trilix.eu/cms/wp-content/uploads/2021/12/Osdijek-eMobiLokacije-300x172.png?resize=300%2C172&ssl=1,https://www.osijek.hr/wp-content/uploads/2021/04/Karta-1.-1024x429.png">
+  </div>
+
+  <div class="section">
+    <h2>Trams and shopping</h2>
+    <p>And if you're not the sporty type and prefer something more relaxed, you can take a tram ride and see the whole city. And maybe visit the large shopping center called Portanova. </p>
+    <img src="https://cdn-sib.net.hr/wp-content/uploads/489702739_1080276957240585_5599919527262408580_n.jpg" data-images="https://osijeknews.hr/wp-content/uploads/2018/11/bozicni_tramvaj_24.11.2018._osijeknews.hr_.jpg,https://cdn-sib.net.hr/wp-content/uploads/1aeaef2b20f3cdf3a95ea82a06aa6bf2.jpg,https://cdn-sib.net.hr/wp-content/uploads/viber_slika_2025-02-19_09-27-50-133.jpg,https://web.gpp-osijek.com/wp-content/uploads/2020/07/osmica-tram-01.jpg">
+    <img src="https://cdn-sib.net.hr/wp-content/uploads/3c0268f0adf89e601243cfc0d3c01a11.jpg" data-images="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Portanova_panorama.jpg/1200px-Portanova_panorama.jpg,https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/eb/b5/cd/portanova-osijek-shopping.jpg?w=900&h=500&s=1,https://www.osijekexpress.com/wp-content/uploads/2020/05/trgova%C4%8Dki-centar-shopping-%C5%A1oping-3-768x512.jpg,https://cdn-vps.osijek031.com/slike/novosti_2009_05/2009_05_12_portanova_ulaz_400.jpg">
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="modalClose">&times;</span>
+    <!-- Dinamičke slike će se ubacivati ovdje -->
+  </div>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+let currentIndex = 0;
+
+function revealNextSection() {
+  if(currentIndex < sections.length){
+    const sec = sections[currentIndex];
+    sec.style.display="block";
+    setTimeout(()=>sec.classList.add('visible'),10);
+    currentIndex++;
+  }
+}
+
+window.addEventListener('wheel', e=>{ if(e.deltaY>0) revealNextSection(); }, {passive:true});
+let startY=0;
+window.addEventListener("touchstart", e=>startY=e.touches[0].clientY);
+window.addEventListener("touchend", e=>{
+  if(startY - e.changedTouches[0].clientY>40) revealNextSection();
+});
+
+/* Accordion content na klik */
+sections.forEach(sec=>{
+  sec.addEventListener('click', (e)=>{
+    if(!e.target.tagName.includes("IMG")){ // ne otvara accordion ako klikne na sliku
+      const extra = sec.querySelector('.extra');
+      if(extra) extra.classList.toggle('open');
+    }
+  });
+});
+
+/* MODAL / LIGHTBOX */
+const modal=document.getElementById('modal');
+const modalContent=document.querySelector('.modal-content');
+const modalClose=document.getElementById('modalClose');
+
+document.querySelectorAll('.section img').forEach(img=>{
+  img.addEventListener('click', e=>{
+    e.stopPropagation(); // sprječava da klik otvori accordion
+    const urls=img.dataset.images.split(',');
+    modalContent.querySelectorAll('img').forEach(i=>i.remove()); // očisti prethodne
+    urls.forEach(u=>{
+      const newImg=document.createElement('img');
+      newImg.src=u.trim();
+      modalContent.appendChild(newImg);
+    });
+    modal.style.display='flex';
+  });
+});
+
+modalClose.addEventListener('click', ()=>{ modal.style.display='none'; });
+modal.addEventListener('click', e=>{
+  if(e.target===modal) modal.style.display='none';
+});
+</script>
+
+</body>
+</html>
